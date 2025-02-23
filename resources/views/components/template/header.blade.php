@@ -1,8 +1,8 @@
 <div class="header">
     <div class="logo logo-dark">
         <a href="index.html">
-            <img src="{{ url('/') }}/assets/images/logo/HIPMI.png" alt="Logo" width="25%" height="57" class="m-5">
-            <img class="logo-fold mt-2 ml-3" src="{{ url('/') }}/assets/images/logo/HIPMI.png" alt="Logo" width="70%" height="57">
+            <img src="{{ url('/') }}/assets/images/logo/accestix.png" alt="Logo" width="60%" height="57" class="m-5">
+            <img class="logo-fold mt-2 ml-3" src="{{ url('/') }}/assets/images/logo/accestix-2.png" alt="Logo" width="50%" height="55">
         </a>
     </div>
     <div class="logo logo-white">
@@ -24,7 +24,7 @@
                 </a>
             </li>
         </ul>
-        
+
         <ul class="nav-right">
             <li class="dropdown dropdown-animated scale-left">
                 <div class="pointer" data-toggle="dropdown">
@@ -74,6 +74,11 @@
                         </div>
                     </a>
                 </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);" data-toggle="modal" data-target="#quick-view">
+                    <i class="anticon anticon-appstore"></i>
+                </a>
             </li>
         </ul>
     </div>

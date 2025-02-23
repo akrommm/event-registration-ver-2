@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HIPMI - 404</title>
-    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/HIPMI.png">
+    <title>Accestix - 404</title>
+    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/accestix-2.png">
     <link rel="stylesheet" href="{{ url('/') }}/errors/style.css">
     <link rel="stylesheet" href="{{ url('/') }}/style/errors/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
