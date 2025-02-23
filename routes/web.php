@@ -31,6 +31,9 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('regis', [AuthController::class, 'showRegis']);
 Route::post('regis', [AuthController::class, 'store']);
 
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->group(function () {
     include "_/admin.php";
+});
+Route::prefix('super-admin')->group(function () {
+    include "_/super-admin.php";
 });

@@ -82,10 +82,10 @@
                                         @endif
                                         @csrf
                                         <div class="form-group" data-validate="Diperlukan Email yang valid">
-                                            <label class="font-weight-semibold" for="email">Email:</label>
+                                            <label class="font-weight-semibold" for="email">User ID:</label>
                                             <div class="input-affix">
-                                                <i class="prefix-icon anticon anticon-mail"></i>
-                                                <input type="text" class="form-control" name="email" placeholder="Email">
+                                                <i class="prefix-icon anticon anticon-user"></i>
+                                                <input type="text" class="form-control" name="userid" placeholder="User ID">
                                             </div>
                                         </div>
                                         <div class="form-group" data-validate="Diperlukan Password">

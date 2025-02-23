@@ -1,4 +1,4 @@
-<x-app>
+<x-module.admin>
 
     <h5 class="m-0 font-weight-bold text-dark" style="font-size: 25px">
         Halo, {{ auth()->user()->nama }}
@@ -61,4 +61,4 @@
         </div>
     </div>
 
-</x-app>
+</x-module.admin>

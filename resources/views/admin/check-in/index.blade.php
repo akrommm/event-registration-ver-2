@@ -1,4 +1,4 @@
-<x-app>
+<x-module.admin>
     <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Check In</h5>
     <hr>
 
@@ -324,5 +324,5 @@
             }
         }
     </style>
-</x-app>
+</x-module.admin>
 

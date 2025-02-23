@@ -1,4 +1,4 @@
-<x-app>
+<x-module.admin>
     <div class="card-header py-2">
         <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Detail Event
         </h5>
@@ -157,4 +157,4 @@
         </div>
     </div>
 
-</x-app>
+</x-module.admin>

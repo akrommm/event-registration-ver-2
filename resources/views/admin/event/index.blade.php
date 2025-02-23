@@ -1,4 +1,4 @@
-<x-app>
+<x-module.admin>
     <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Manajemen Event</h5>
     <hr>
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
@@ -231,4 +231,4 @@
         </div>
     </div>
 
-</x-app>
+</x-module.admin>

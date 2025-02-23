@@ -2,13 +2,14 @@
 
 namespace App\Models\Admin;
 
-use App\Models\Admin\Module as AdminModule;
 use App\Models\Model;
 use App\Models\ModelAuthenticate;
+use App\Models\Admin\Module;
+use App\Models\Admin\User;
 
 class Role extends ModelAuthenticate
 {
-    protected $table = 'admin__role';
+    protected $table = 'role';
 
     public function user()
     {
@@ -17,6 +18,6 @@ class Role extends ModelAuthenticate
 
     public function module()
     {
-        return $this->belongsTo(AdminModule::class, 'id_module');
+        return $this->belongsTo(Module::class, 'id_module');
     }
 }

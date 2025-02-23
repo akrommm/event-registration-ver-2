@@ -62,27 +62,81 @@ class AuthController extends Controller
 
     public function loginProcess()
     {
+        $guard = null;
+        $userid = request('userid');
+        if (Str::contains($userid, '@')) {
+            $field = 'email';
+        } else {
+            $userid = str_replace(" ", "", $userid);
+            $strlen = Str::length($userid);
+            if ($strlen == 17) {
+                $field = 'nip';
+            } else if ($strlen == 10) {
+                $field = 'nim';
+                $guard = 'mahasiswa';
+            } else {
+                $field = 'username';
+            }
+        }
+
         $credential = [
-            'email' => request('email'),
+            $field => request('userid'),
             'password' => request('password')
         ];
 
-        if (auth()->attempt($credential)) {
-            $user = auth()->user();
-            if ($user->type == 'ADMIN') {
-                return redirect('admin/dashboard')->with('success', 'Login Berhasil');
+        $req_remember = request('remember');
+        $remember = (isset($req_remember)) ? true : false;
+
+        if ($guard) {
+            if (auth()->guard('mahasiswa')->attempt($credential, $remember)) {
+                $user = auth()->guard('mahasiswa')->user();
+                if ($user->is_alumni) return redirect('alumni/dashboard')->with('success', 'Login berhasil');
+                return redirect('mahasiswa/dashboard')->with('success', 'Login berhasil');
             } else {
-                return redirect('beranda')->with('success', 'Login Berhasil');
+                return view('auth.login', ['message' => 'Login gagal, silahkan cek email dan password anda']);
             }
         } else {
-            return back()->with('danger', 'Login Gagal, Silahkan Cek Email dan Password');
+            if (auth()->attempt($credential, $remember)) {
+                $user = auth()->user();
+                return $this->manageRedirect($user);
+            } else {
+                return view('auth.login', ['message' => 'Login gagal, silahkan cek email dan password anda']);
+            }
         }
     }
+
+
+    // public function loginProcess()
+    // {
+    //     $credential = [
+    //         'email' => request('email'),
+    //         'password' => request('password')
+    //     ];
+
+    //     if (auth()->attempt($credential)) {
+    //         $user = auth()->user();
+    //         if ($user->type == 'ADMIN') {
+    //             return redirect('admin/dashboard')->with('success', 'Login Berhasil');
+    //         } else {
+    //             return redirect('beranda')->with('success', 'Login Berhasil');
+    //         }
+    //     } else {
+    //         return back()->with('danger', 'Login Gagal, Silahkan Cek Email dan Password');
+    //     }
+    // }
 
     public function logout()
     {
         auth()->logout();
 
         return redirect('login');
+    }
+
+    public function manageRedirect($user)
+    {
+        $list_role =  $user->role;
+        $firstRole = $list_role->first();
+        $url = $firstRole->module->url;
+        return redirect($url);
     }
 }

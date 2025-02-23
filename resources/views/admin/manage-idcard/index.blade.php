@@ -1,4 +1,4 @@
-<x-app>
+<x-module.admin>
     <!-- Data Peserta -->
     <div class="card-header py-2 mt-5">
         <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Data ID Card Panitia
@@ -108,4 +108,4 @@
             </div>
         </div>
     </div>
-</x-app>
+</x-module.admin>

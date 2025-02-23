@@ -1,7 +1,7 @@
-<x-app>
+<x-module.super-admin>
 
     <h5 class="m-0 font-weight-bold text-dark" style="font-size: 25px">
-        Halo, {{ auth()->user()->nama }}
+        Halo, Super Admin
     </h5>
     <hr>
     <p class="mt-0 text-dark" style="font-size: 16px">
@@ -61,4 +61,4 @@
         </div>
     </div>
 
-</x-app>
+</x-module.super-admin>

@@ -12,6 +12,11 @@ class User extends ModelAuthenticate
 
     public $fillable = ['nama', 'email'];
 
+    public function role()
+    {
+        return $this->hasMany(Role::class, 'id_users');
+    }
+
     public function getTanggalLahirStringAttribute()
     {
         return Carbon::parse($this->attributes['tanggal_lahir'])->translatedFormat('l, d F Y');
@@ -22,7 +27,7 @@ class User extends ModelAuthenticate
         $this->handleDelete();
         if (request()->hasFile('foto')) {
             $foto = request()->file('foto');
-            $destination = "images/user";
+            $destination = "assets/img/user";
             $randomStr = Str::random(5);
             $filename = $this->id . "-" . time() . "-" . $randomStr . "." . $foto->extension();
             $url = $foto->storeAs($destination, $filename);

@@ -1,4 +1,4 @@
-<x-app>
+<x-module.admin>
     <div class="text-center mb-4">
         <h5 class="font-weight-bold text-dark" style="font-size: 30px;">Pembuatan ID Card Berhasil!</h5>
     </div>
@@ -67,4 +67,4 @@
             }
         }
     </style>
-</x-app>
+</x-module.admin>

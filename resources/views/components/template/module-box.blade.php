@@ -1,6 +1,6 @@
-<a href="" class="box" >
-    <span class="title"></span>
-    <span class="subtitle"></span>
+<a href="{{ url($url) }}" class="box" style="background: {{ $color }}">
+    <span class="title">{{ $title }}</span>
+    <span class="subtitle">{{ $subtitle }}</span>
 </a>
 
 @once

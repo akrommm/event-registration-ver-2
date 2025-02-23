@@ -1,4 +1,4 @@
-<x-app>
+<x-module.admin>
     <div class="card-header">
         <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px"> Profil
         </h5>
@@ -41,4 +41,4 @@
             </div>
         </div>
     </div>
-</x-app>
+</x-module.admin>

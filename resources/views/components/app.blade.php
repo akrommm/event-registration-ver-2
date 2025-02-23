@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Accestix - Event Registration</title>
+    <title>Accestix - {{ $title }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/accestix-2.png">
@@ -40,20 +40,19 @@
 </head>
 
 <body>
+
     <div class="app">
         <div class="layout">
             <!-- Header START -->
-            <x-template.header />
+            <x-template.header :menu="$menu" :title="$title" :header="$header" />
             <!-- Header END -->
 
             <!-- Side Nav START -->
-            <x-template.sidebar />
+            <x-template.sidebar :menu="$menu" :title="$title" :header="$header" />
             <!-- Side Nav END -->
 
             <!-- Page Container START -->
             <div class="page-container">
-
-
                 <!-- Content Wrapper START -->
                 <div class="main-content" style="background-image: url('{{ url('/')}}/assets/images/others/bg1.jpg')">
                     <div class="container-fluid pt-4">
@@ -66,8 +65,6 @@
                     </div><!-- /.container-fluid -->
                 </div>
                 <!-- Content Wrapper END -->
-
-
 
                 <!-- Footer START -->
                 <x-template.footer />
