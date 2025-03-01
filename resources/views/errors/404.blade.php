@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Accestix - 404</title>
-    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/accestix-2.png">
+    <title>A-Labs - 404</title>
+    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/A-labs1.png">
     <link rel="stylesheet" href="{{ url('/') }}/errors/style.css">
     <link rel="stylesheet" href="{{ url('/') }}/style/errors/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
@@ -31,8 +31,6 @@
 
                             <h4>Ini bukan kesalahan anda, hanya saja halaman ini lagi proses dikembangkan.</h4>
                             <p>Kami harap anda berkenan menunggu hingga halaman ini selesai kami kembangkan</p>
-
-                            <a href="{{ url('admin/dashboard') }}" class="link_404">Pergi Ke Dashboard</a>
                         </div>
                     </div>
                 </div>

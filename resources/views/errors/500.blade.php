@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Accestix - 404</title>
-    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/accestix-2.png">
+    <title>A-Labs - 500</title>
+    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/A-labs1.png">
     <link rel="stylesheet" href="{{ url('/') }}/errors/style.css">
     <link rel="stylesheet" href="{{ url('/') }}/style/errors/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
@@ -31,7 +31,7 @@
 
                             <h4>Ini bukan masalah besar, adanya masalah pada server sehingga server tidak bisa memenuhi permintaan Anda.</h4>
 
-                            <a href="{{ url('admin/dashboard') }}" class="link_404">Pergi ke Dashboard</a>
+
                         </div>
                     </div>
                 </div>

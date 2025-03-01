@@ -1,10 +1,10 @@
-<x-app>
+<x-module.super-admin>
     <div class="card-header py-2">
         <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Detail Event
         </h5>
     </div>
     <br>
-    <x-template.button.back-button url="admin/event" />
+    <x-template.button.back-button url="super-admin/event" />
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
         <!-- Bagian Gambar Banner -->
         <div class="card-img-top text-center">
@@ -109,7 +109,7 @@
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
         <div class="card-body">
             <div class="table-responsive">
-                <a href="{{ route('admin.export-peserta-pdf', $event->id) }}" target="_blank" class="btn btn-danger float-right ml-2 btn-interactive">
+                <a href="{{ route('super-admin.export-peserta-pdf', $event->id) }}" target="_blank" class="btn btn-danger float-right ml-2 btn-interactive">
                     <i class="fas fa-file-pdf"></i> Export PDF
                 </a>
                 <table id="data-table" class="table table-datatable table-bordered">
@@ -132,7 +132,7 @@
                                     <a href="#hapus{{ $data->id }}" data-toggle="modal" class="btn btn-danger btn-interactive">
                                         <i class="fas fa-trash"></i>
                                     </a>
-                                    <a href="{{ route('admin.download.idcard', $data->id) }}" target="_blank" class="btn btn-primary btn-interactive">
+                                    <a href="{{ route('super-admin.download.idcard', $data->id) }}" target="_blank" class="btn btn-primary btn-interactive">
                                         <i class="fas fa-print"></i>
                                     </a>
                                 </div>
@@ -149,7 +149,7 @@
                             </td>
                         </tr>
                         <x-template.modal.modal-delete id="hapus{{ $data->id }}"
-                            action="{{ url('admin/delete-peserta', $data->id) }}" />
+                            action="{{ url('super-admin/delete-peserta', $data->id) }}" />
                         @endforeach
                     </tbody>
                 </table>
@@ -157,4 +157,4 @@
         </div>
     </div>
 
-</x-app>
+</x-module.super-admin>

@@ -8,16 +8,19 @@
                 <table id="data-table" class="table table-datatable table-bordered">
                     <thead class="bg-dark">
                         <th style="color: white;" width="10px" class="text-center">No.</th>
-                        <th style="color: white;" width="90px" class="text-center">Aksi</th>
                         <th style="color: white;" class="text-center">Nama Module</th>
                         <th style="color: white;" class="text-center">Tag</th>
                         <th style="color: white;" class="text-center">Jumlah Pengguna</th>
+                        <th style="color: white;" width="90px" class="text-center">Aksi</th>
                     </thead>
                     <tbody>
                         @foreach ($list_module->sortByDesc('created_at')->values() as $module)
                         <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
-                            <td>
+                            <td class="text-center">{{ $module->name }}</td>
+                            <td class="text-center">{{ $module->tag }}</td>
+                            <td class="text-center">{{ $module->role_count }}</td>
+                            <td class="text-center">
                                 <div class="btn-group">
                                     <x-template.button.info-button url="super-admin/module" id="{{ $module->id }}" />
                                     <a href="#edit{{ $module->id }}" data-toggle="modal" class="btn btn-warning btn-interactive">
@@ -28,9 +31,6 @@
                                     </a>
                                 </div>
                             </td>
-                            <td class="text-center">{{ $module->name }}</td>
-                            <td class="text-center">{{ $module->tag }}</td>
-                            <td class="text-center">{{ $module->role_count }}</td>
                         </tr>
 
                         <x-template.modal.modal-delete id="hapus{{ $module->id }}"

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ID Card - {{ $registration->nama_peserta ?? '-' }}</title>
-    <link rel="shortcut icon" href="{{ url('/') }}/assets/images/logo/HIPMI.png">
+    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/A-Labs1.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,7 +38,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('{{ url('/') }}/assets/images/logo/muscab.png') no-repeat center;
+            background: url('{{ url($logo->background) }}') no-repeat center;
             background-size: cover;
             opacity: 0.2;
             z-index: 1;
@@ -50,17 +50,27 @@
             padding-top: 60px;
         }
 
-        .logo-event, .logo-hipmi {
+        .logo-event,
+        .logo-hipmi {
             position: absolute;
             top: 15px;
             width: 95px;
             z-index: 3;
         }
 
-        .logo-event { left: 15px; margin-top:10px;}
-        .logo-hipmi { right: 15px; width: 50px; margin-top:10px;}
+        .logo-event {
+            left: 15px;
+            margin-top: 10px;
+        }
 
-        .circle-decorations, .circle-decorations-2 {
+        .logo-hipmi {
+            right: 15px;
+            width: 50px;
+            margin-top: 10px;
+        }
+
+        .circle-decorations,
+        .circle-decorations-2 {
             position: absolute;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
@@ -68,13 +78,17 @@
         }
 
         .circle-decorations {
-            top: -30px; left: -30px;
-            width: 120px; height: 120px;
+            top: -30px;
+            left: -30px;
+            width: 120px;
+            height: 120px;
         }
 
         .circle-decorations-2 {
-            bottom: -20px; right: -20px;
-            width: 90px; height: 90px;
+            bottom: -20px;
+            right: -20px;
+            width: 90px;
+            height: 90px;
         }
 
         .card h3 {
@@ -115,8 +129,14 @@
                 padding: 0;
             }
 
-            body * { visibility: hidden; }
-            .card, .card * { visibility: visible; }
+            body * {
+                visibility: hidden;
+            }
+
+            .card,
+            .card * {
+                visibility: visible;
+            }
 
             @page {
                 size: F4 portrait;
@@ -137,8 +157,8 @@
     <div class="card">
         <div class="circle-decorations"></div>
         <div class="circle-decorations-2"></div>
-        <img class="logo-event" src="{{ url('/') }}/assets/images/logo/muscab.png" alt="Logo Event">
-        <img class="logo-hipmi" src="{{ url('/') }}/assets/images/logo/HIPMI.png" alt="Logo HIPMI">
+        <img class="logo-event" src="{{ url($logo->logo_event) }}" alt="Logo Event">
+        <img class="logo-hipmi" src="{{ url($logo->logo) }}" alt="Logo HIPMI">
         <div class="card-content">
             <h3>{{ $registration->nama_peserta ?? '-' }}</h3>
             <p>{{ $registration->role }}</p>

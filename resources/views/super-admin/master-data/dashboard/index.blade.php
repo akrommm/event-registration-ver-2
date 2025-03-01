@@ -5,7 +5,7 @@
     </h5>
     <hr>
     <p class="mt-0 text-dark" style="font-size: 16px">
-        Berikut ini adalah ringkasan informasi yang ada di Accestix - Event Registration.
+        Berikut ini adalah ringkasan informasi yang ada di A-Labs - Event Registration.
     </p>
 
     <div class="row mt-3">

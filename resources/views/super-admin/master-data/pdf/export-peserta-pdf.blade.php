@@ -3,7 +3,7 @@
 
 <head>
     <title>Data Peserta {{ $event->nama }}</title>
-    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/HIPMI.png">
+    <link rel="shortcut icon" href="{{ url('/')}}/assets/images/logo/A-Labs1.png">
     <style>
         body {
             font-family: Arial, sans-serif;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Event;
@@ -23,7 +23,7 @@ class RegistrasiController extends Controller
     function index()
     {
         $list_event = Event::where('status', 1)->get();
-        return view('admin.registrasi.index', compact('list_event'));
+        return view('super-admin.master-data.registrasi.index', compact('list_event'));
     }
 
     public function store(Request $request)
@@ -78,7 +78,7 @@ class RegistrasiController extends Controller
         $registration->handleUploadImg();  // Upload foto setelah data peserta disimpan
 
         // Redirect ke halaman sukses dengan ID registrasi
-        return redirect()->route('admin.registrasi.success', ['id' => $registration->id])
+        return redirect()->route('super-admin.registrasi.success', ['id' => $registration->id])
             ->with('success', 'Registrasi Berhasil');
     }
 
@@ -120,7 +120,7 @@ class RegistrasiController extends Controller
         $registration = Registration::findOrFail($id);
 
         // Mengirimkan data registrasi ke view
-        return view('admin.registrasi.success', compact('registration'));
+        return view('super-admin.master-data.registrasi.success', compact('registration'));
     }
 
 
@@ -130,7 +130,7 @@ class RegistrasiController extends Controller
         $registration = Registration::find($id);
         $logo = Logo::latest()->first();
 
-        return view('admin.pdf.idcard', compact('registration', 'logo'));
+        return view('super-admin.master-data.pdf.idcard', compact('registration', 'logo'));
     }
 
     public function exportPDF($id)
@@ -141,7 +141,7 @@ class RegistrasiController extends Controller
             ->where('role', 'Peserta')
             ->get();
 
-        return view('admin.pdf.export-peserta-pdf', compact('event', 'peserta'));
+        return view('super-admin.master-data.pdf.export-peserta-pdf', compact('event', 'peserta'));
     }
 
     public function deletePeserta($id)

@@ -129,9 +129,6 @@
                             <td class="text-center">{{ $key + 1 }}</td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <a href="#hapus{{ $data->id }}" data-toggle="modal" class="btn btn-danger btn-interactive">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
                                     <a href="{{ route('admin.download.idcard', $data->id) }}" target="_blank" class="btn btn-primary btn-interactive">
                                         <i class="fas fa-print"></i>
                                     </a>
@@ -148,8 +145,6 @@
                                 @endif
                             </td>
                         </tr>
-                        <x-template.modal.modal-delete id="hapus{{ $data->id }}"
-                            action="{{ url('admin/delete-peserta', $data->id) }}" />
                         @endforeach
                     </tbody>
                 </table>

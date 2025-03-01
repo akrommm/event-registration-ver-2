@@ -1,9 +1,9 @@
-<x-app>
+<x-module.super-admin>
     <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Registrasi Event</h5>
     <hr>
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
         <div class="card-body">
-            <form action="{{ url('admin/registration') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('super-admin/registration') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama Peserta</label>
@@ -48,4 +48,4 @@
             </form>
         </div>
     </div>
-</x-app>
+</x-module.super-admin>

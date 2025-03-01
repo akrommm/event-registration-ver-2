@@ -1,4 +1,4 @@
-<x-app>
+<x-module.super-admin>
     <div class="text-center mb-4">
         <h5 class="font-weight-bold text-dark" style="font-size: 30px;">Registrasi Berhasil!</h5>
     </div>
@@ -29,13 +29,13 @@
                     <img src="{{ url($registration->qr_code) }}" alt="QR Code" class="img-fluid" style="max-width: 200px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
                 </div>
                 <div class="text-center mt-4">
-                    <a href="{{ route('admin.download.idcard', $registration->id) }}" target="_blank" class="btn btn-success btn-lg px-10 shadow-sm" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" style="border-radius: 10px;">
+                    <a href="{{ route('super-admin.download.idcard', $registration->id) }}" target="_blank" class="btn btn-success btn-lg px-10 shadow-sm" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" style="border-radius: 10px;">
                         <i class="fas fa-print mr-2"></i> Cetak ID Card
                     </a>
                 </div>
 
                 <div class="text-center mt-4">
-                    <a href="{{ url('admin/registration') }}" class="btn btn-primary btn-lg px-10 shadow-sm" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" style="border-radius: 10px;">
+                    <a href="{{ url('super-admin/registration') }}" class="btn btn-primary btn-lg px-10 shadow-sm" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" style="border-radius: 10px;">
                         <i class="fas fa-arrow-left mr-2"></i> Kembali ke Halaman Registrasi
                     </a>
                 </div>
@@ -67,4 +67,4 @@
             }
         }
     </style>
-</x-app>
+</x-module.super-admin>

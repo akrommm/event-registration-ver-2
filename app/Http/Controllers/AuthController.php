@@ -93,14 +93,14 @@ class AuthController extends Controller
                 if ($user->is_alumni) return redirect('alumni/dashboard')->with('success', 'Login berhasil');
                 return redirect('mahasiswa/dashboard')->with('success', 'Login berhasil');
             } else {
-                return view('auth.login', ['message' => 'Login gagal, silahkan cek email dan password anda']);
+                return view('auth.login', ['message' => 'Login gagal, silahkan cek data yang anda masukan!']);
             }
         } else {
             if (auth()->attempt($credential, $remember)) {
                 $user = auth()->user();
                 return $this->manageRedirect($user);
             } else {
-                return view('auth.login', ['message' => 'Login gagal, silahkan cek email dan password anda']);
+                return view('auth.login', ['message' => 'Login gagal, silahkan cek data yang anda masukan!']);
             }
         }
     }

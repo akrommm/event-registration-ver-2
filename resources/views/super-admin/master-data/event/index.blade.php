@@ -1,4 +1,4 @@
-<x-app>
+<x-module.super-admin>
     <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Manajemen Event</h5>
     <hr>
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
@@ -30,7 +30,7 @@
                             </td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <x-template.button.info-button url="admin/event" id="{{ $event->id }}" />
+                                    <x-template.button.info-button url="super-admin/event" id="{{ $event->id }}" />
                                     <a href="#edit{{ $event->id }}" data-toggle="modal" class="btn btn-warning btn-interactive">
                                         <i class="fas fa-edit"></i>
                                     </a>
@@ -42,10 +42,10 @@
                         </tr>
 
                         <x-template.modal.modal-delete id="hapus{{ $event->id }}"
-                            action="{{ url('admin/event', $event->id) }}" />
+                            action="{{ url('super-admin/event', $event->id) }}" />
 
                         <x-template.modal.modaledit id="edit{{ $event->id }}"
-                            action="{{ url('admin/event', $event->id) }}">
+                            action="{{ url('super-admin/event', $event->id) }}">
 
                             <div class="modal-content modal-lg">
                                 <div class="modal-header">
@@ -231,4 +231,4 @@
         </div>
     </div>
 
-</x-app>
+</x-module.super-admin>

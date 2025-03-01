@@ -26,6 +26,9 @@
             <li class="{{request()->is('super-admin/module') ? 'active' : ''}} ">
                 <a href="{{ url('super-admin/module') }}"><i class="anticon anticon-switcher"></i> Module</a>
             </li>
+            <li class="{{request()->is('super-admin/logo-idcard') ? 'active' : ''}} ">
+                <a href="{{ url('super-admin/logo-idcard') }}"><i class="anticon anticon-idcard"></i> Logo ID Card</a>
+            </li>
         </ul>
     </li>
     <li class="nav-item dropdown">

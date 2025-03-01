@@ -4,7 +4,6 @@
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
         <div class="card-body">
             <div class="table-responsive">
-                <a href="" data-toggle="modal" data-target="#tambah-event" class="btn btn-dark float-right ml-2"><i class="fas fa-plus"></i> Tambah Event</a>
                 <table id="data-table" class="table table-bordered">
                     <thead class="bg-dark">
                         <tr>
@@ -31,107 +30,9 @@
                             <td class="text-center">
                                 <div class="btn-group">
                                     <x-template.button.info-button url="admin/event" id="{{ $event->id }}" />
-                                    <a href="#edit{{ $event->id }}" data-toggle="modal" class="btn btn-warning btn-interactive">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <a href="#hapus{{ $event->id }}" data-toggle="modal" class="btn btn-danger btn-interactive">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
                                 </div>
                             </td>
                         </tr>
-
-                        <x-template.modal.modal-delete id="hapus{{ $event->id }}"
-                            action="{{ url('admin/event', $event->id) }}" />
-
-                        <x-template.modal.modaledit id="edit{{ $event->id }}"
-                            action="{{ url('admin/event', $event->id) }}">
-
-                            <div class="modal-content modal-lg">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Edit Data Event</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="nama" class="control-label">Nama Event</label>
-                                                <input type="text" id="nama" name="nama" class="form-control" value="{{$event->nama}}">
-                                                @error('nama')
-                                                <p class="text-danger" style="font-size: 12px">* {{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="waktu" class="control-label">Tanggal Event</label>
-                                                <input type="datetime-local" id="waktu" name="waktu" class="form-control" value="{{$event->waktu}}">
-                                                @error('waktu')
-                                                <p class="text-danger" style="font-size: 12px">* {{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="tempat" class="control-label">Tempat Event</label>
-                                                <input type="text" id="tempat" name="tempat" class="form-control" value="{{$event->tempat}}">
-                                                @error('tempat')
-                                                <p class="text-danger" style="font-size: 12px">* {{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="status" class="control-label">Status</label>
-                                                <select class="form-control" name="status" id="status" required>
-                                                    @if ($event->status == 2)
-                                                    <option value="2">Draft</option>
-                                                    <option value="1">Publish</option>
-                                                    @else
-                                                    <option value="1">Publish</option>
-                                                    <option value="2">Draft</option>
-                                                    @endif
-                                                </select>
-                                                @error('status')
-                                                <p class="text-danger" style="font-size: 12px">* {{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="gambar" class="control-label">Gambar</label>
-                                                <input type="file" id="gambar" name="gambar" class="form-control" value="{{$event->gambar}}">
-                                                @error('gambar')
-                                                <p class="text-danger" style="font-size: 12px">* {{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label for="">Deskripsi</label>
-                                            <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" id="summernote" cols="50" rows="10">{{ $event->deskripsi }}</textarea>
-                                            @error('deskripsi')
-                                            <p class="text-danger" style="font-size: 12px; margin-bottom: 0px; padding-bottom: 0px">* {{ $message }}</p style="font-size: 12px">
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer justify-content-between">
-                                    <button type="button" class="btn btn-danger btn-interactive"
-                                        data-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary btn-interactive">Simpan</button>
-                                </div>
-                            </div>
-                        </x-template.modal.modaledit>
                         @endforeach
                     </tbody>
                 </table>

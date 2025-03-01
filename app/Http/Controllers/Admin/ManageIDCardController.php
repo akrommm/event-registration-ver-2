@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use App\Models\Admin\Event;
 use App\Models\Admin\Registration;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +30,7 @@ class ManageIDCardController extends Controller
             'id_event' => 'required',
             'role' => 'required',
         ], [
-            
+
             'id_event.required' => 'Event Harus Dipilih',
             'role.required' => 'Role Harus Dipilih',
         ]);
@@ -46,7 +47,7 @@ class ManageIDCardController extends Controller
         } while (!$isUnique);
 
         // Gunakan QRCodeGenerator untuk membuat QR Code
-        $qrCodeFileName = $request->nama . '.png';
+        $qrCodeFileName = Str::uuid() . '.png';
         $qrCodeFilePath = $this->generateQRCode($participantId, $qrCodeFileName);
 
         // Simpan data registrasi peserta ke database tanpa menyertakan foto
